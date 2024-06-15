@@ -7,7 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import java.time.Duration;
@@ -18,7 +17,7 @@ public class BaseTest {
     public static WebDriver driver;
     public ResourceBundle rb;
 
-    @BeforeMethod
+    @BeforeClass
     @Parameters("browser")
     public void setup(ITestContext testContext, String br) {
         rb = ResourceBundle.getBundle("config");

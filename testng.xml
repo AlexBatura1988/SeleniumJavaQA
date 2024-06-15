@@ -5,9 +5,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.example.testCases.LoginTest">
-                <methods>
-                    <include name="login"/>
-                </methods>
+
             </class> <!-- org.example.testCases.LoginTest -->
         </classes>
     </test> <!-- seleniumJavaQA -->
