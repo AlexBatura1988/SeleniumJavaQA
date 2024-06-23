@@ -4,9 +4,9 @@
     <test thread-count="5" name="seleniumJavaQA">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.example.testCases.LoginTest">
+<!--            <class name="org.example.testCases.LoginTest"/>-->
+            <class name="org.example.testCases.ProductPageTest"/>
 
-            </class> <!-- org.example.testCases.LoginTest -->
         </classes>
     </test> <!-- seleniumJavaQA -->
 </suite> <!-- Default Suite -->
