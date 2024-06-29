@@ -5,7 +5,8 @@
         <parameter name="browser" value="chrome"/>
         <classes>
 <!--            <class name="org.example.testCases.LoginTest"/>-->
-            <class name="org.example.testCases.ProductPageTest"/>
+<!--            <class name="org.example.testCases.ProductPageTest"/>-->
+            <class name="org.example.testCases.SubmitOrderTest"/>
 
         </classes>
     </test> <!-- seleniumJavaQA -->

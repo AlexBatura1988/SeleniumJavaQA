@@ -19,6 +19,9 @@ public class ProductPage extends BasePage {
     WebElement toastAddToCart;
     By addToCartBtn = By.cssSelector(".btn.w-10.rounded");
 
+    @FindBy(css = ".btn.btn-custom[routerlink='/dashboard/cart']")
+    WebElement cartBtn;
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -44,6 +47,13 @@ public class ProductPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(toastAddToCart));
         return toastAddToCart.getText();
     }
+
+    public CartPage goToCartPage() {
+        click(cartBtn);
+        return  new CartPage(driver);
+    }
+
+
 
 
 }
