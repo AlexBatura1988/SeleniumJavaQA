@@ -3,9 +3,13 @@ package org.example.pageObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
+
+    @FindBy(css = ".btn.btn-custom[routerlink='/dashboard/myorders']")
+    WebElement orderBtn;
 
     static WebDriver driver;
 
@@ -56,4 +60,12 @@ public class BasePage {
             throw new RuntimeException(e);
         }
     }
+
+    public OrderPage goToOrderPage() {
+        click(orderBtn);
+        OrderPage orderPage = new OrderPage(driver);
+        return orderPage;
+    }
+
+
 }

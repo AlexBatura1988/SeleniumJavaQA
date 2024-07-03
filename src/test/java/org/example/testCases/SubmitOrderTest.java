@@ -12,6 +12,7 @@ import java.util.List;
 public class SubmitOrderTest extends BaseTest {
 
     String confirmationPagMsg = "THANKYOU FOR THE ORDER.";
+    String productName = "ADIDAS ORIGINAL";
 
     @BeforeClass
     public void login() {
@@ -21,9 +22,10 @@ public class SubmitOrderTest extends BaseTest {
         lp.clickLogin();
         lp.login();
     }
+
     @Test
     public void submitOrderTest() throws InterruptedException {
-        String productName = "ADIDAS ORIGINAL";
+
         ProductPage productPage = new ProductPage(driver);
 
         List<WebElement> products = productPage.getProductList();
@@ -37,6 +39,13 @@ public class SubmitOrderTest extends BaseTest {
         checkoutPage.selectCountry("Russian Federation");
         ConfirmationPage confirmationPage = checkoutPage.submitOrder();
         Assert.assertEquals(confirmationPage.getConfMsg(), confirmationPagMsg);
+    }
+
+    @Test(dependsOnMethods = {"submitOrderTest"})
+    public void OrderHistoryTest() {
+        ProductPage productPage = new ProductPage(driver);
+        OrderPage orderPage = productPage.goToOrderPage();
+        Assert.assertTrue(orderPage.VerifyOrderDisplay(productName));
 
     }
 
