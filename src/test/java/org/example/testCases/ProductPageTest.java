@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -54,12 +55,6 @@ public class ProductPageTest extends BaseTest {
         Assert.assertEquals(productPage.addProductToCart(product3), toastAddToCartMsg);
 
     }
-
-
-
-
-
-
 
 
 }
